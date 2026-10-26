@@ -1,0 +1,296 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Exo 2', Arial, sans-serif;
+    color: #e8eaf6;
+    min-height: 100vh;
+    padding: 30px 16px;
+    background-color: #080b18;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 25% 75%, #b8caff 50%, transparent 100%),
+        radial-gradient(2px 2px at 80% 30%, #ffffff 50%, transparent 100%),
+        radial-gradient(1px 1px at 65% 85%, #d5c8ff 50%, transparent 100%),
+        radial-gradient(1px 1px at 45% 45%, #ffffff 50%, transparent 100%),
+        radial-gradient(ellipse at top left, #17244a 0%, transparent 45%),
+        radial-gradient(ellipse at bottom right, #251b45 0%, transparent 45%);
+    background-size:
+        240px 240px,
+        180px 180px,
+        300px 300px,
+        220px 220px,
+        160px 160px,
+        100% 100%,
+        100% 100%;
+    background-attachment: fixed;
+}
+
+/* Área principal */
+.container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(13, 18, 38, 0.96);
+    border: 1px solid #35466d;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos */
+h1 {
+    color: #a9caff;
+    text-align: center;
+    font-size: clamp(27px, 5vw, 36px);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+h1::before {
+    content: "✦ ";
+    color: #c7b7ff;
+}
+
+h1::after {
+    content: " ✦";
+    color: #c7b7ff;
+}
+
+h2 {
+    color: #c3b8ff;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+p {
+    color: #d0d7ec;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* Campos pessoais */
+label {
+    display: block;
+    margin: 17px 0 9px;
+    font-weight: 600;
+    color: #9bacdd;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    background: #10172b;
+    color: #f0f3ff;
+    border: 1px solid #46577e;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #91b8ff;
+    outline-offset: 2px;
+}
+
+/* Caixas das perguntas */
+.pergunta {
+    margin-top: 25px;
+    padding: 20px;
+    background: #111a31;
+    border: 1px solid #35466d;
+    border-radius: 9px;
+}
+
+.pergunta label {
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+/* Espaço entre as opções */
+.pergunta input[type="radio"],
+.pergunta input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #a99aff;
+}
+
+/* Botões */
+button {
+    display: block;
+    width: 100%;
+    min-height: 47px;
+    margin-top: 24px;
+    padding: 13px 18px;
+    background: #526da8;
+    color: #ffffff;
+    border: 1px solid #8da8e5;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background: #6c83bd;
+}
+
+/* Resultado do perfil */
+#resultado {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #35466d;
+}
+
+.imagem-perfil {
+    width: 100%;
+    max-width: 420px;
+    margin: 22px auto;
+    overflow: hidden;
+    border: 1px solid #46577e;
+    border-radius: 9px;
+    background: #0b1020;
+}
+
+.imagem-perfil svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Mensagens de validação */
+#mensagemEmpate {
+    color: #d0c5ff;
+    margin-top: 15px;
+}
+
+/* Elementos escondidos */
+[hidden] {
+    display: none !important;
+}
+
+/* Celulares */
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 21px 14px;
+        border-radius: 9px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .pergunta {
+        margin-top: 21px;
+        padding: 16px 12px;
+    }
+
+    .pergunta label {
+        margin: 16px 0;
+    }
+
+    button {
+        min-height: 46px;
+    }
+}
+
+/* Reduz efeitos para quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+/* Botões com degradê e tema espacial */
+button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(circle at 15% 25%, #ffffff 1px, transparent 1.8px),
+        radial-gradient(circle at 75% 70%, #d9d6ff 1px, transparent 1.8px),
+        radial-gradient(circle at 45% 15%, #ffffff 1px, transparent 1.8px),
+        linear-gradient(115deg, #263f79, #55418a, #293e70);
+
+    background-size:
+        70px 60px,
+        90px 80px,
+        110px 90px,
+        100% 100%;
+
+    color: #ffffff;
+    border: 1px solid #829be8;
+    border-radius: 8px;
+
+    padding: 13px 18px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow: 0 3px 10px rgba(57, 71, 150, 0.25);
+    transition: background-color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background:
+        radial-gradient(circle at 15% 25%, #ffffff 1px, transparent 1.8px),
+        radial-gradient(circle at 75% 70%, #d9d6ff 1px, transparent 1.8px),
+        radial-gradient(circle at 45% 15%, #ffffff 1px, transparent 1.8px),
+        linear-gradient(115deg, #365ba6, #7359b0, #405995);
+
+    background-size:
+        70px 60px,
+        90px 80px,
+        110px 90px,
+        100% 100%;
+
+    border-color: #b2c4ff;
+    box-shadow: 0 4px 16px rgba(102, 124, 235, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Efeito ao clicar */
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 5px rgba(57, 71, 150, 0.25);
+}
+
+/* Mantém os botões acessíveis pelo teclado */
+button:focus-visible {
+    outline: 2px solid #c7d5ff;
+    outline-offset: 3px;
+}
+
+/* Respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}
